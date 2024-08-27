@@ -22,7 +22,8 @@ server <- function(input, output) {
       stringr::str_glue("merger_{from}_{to}.csv")
     },
     content = function(file) {
-      write.csv(reactive_merger(), file)
+      write.csv(reactive_merger(), file,
+                row.names = FALSE)
     }
   )
 }
