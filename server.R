@@ -19,10 +19,10 @@ server <- function(input, output) {
       from <- input$merger_date_range[[1]]
       to <- input$merger_date_range[[2]]
 
-      stringr::str_glue("merger-{from}-{to}.csv")
+      stringr::str_glue("merger_{from}_{to}.csv")
     },
     content = function(file) {
-      readr::write_excel_csv(reactive_merger(), file)
+      write.csv(reactive_merger(), file)
     }
   )
 }
