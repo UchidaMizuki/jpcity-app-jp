@@ -23,7 +23,8 @@ server <- function(input, output) {
     },
     content = function(file) {
       write.csv(reactive_merger(), file,
-                row.names = FALSE)
+                row.names = FALSE,
+                fileEncoding = "cp932")
     }
   )
 }
